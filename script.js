@@ -21,7 +21,7 @@ T.forEach(function(t,i){var li=document.createElement('li'),b=document.createEle
 function go(i,a){cur=(i+T.length)%T.length;pos=0;render();if(a)start();}
 function ytId(u){var m=(u||'').match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:'';}
 function start(){stop();on=true;player.classList.add('playing');playBtn.textContent='❚❚';playBtn.setAttribute('aria-label','일시정지');var id=ytId(T[cur][3]),y=document.getElementById('yt');
-if(id){y.hidden=false;document.getElementById('idle').hidden=true;y.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1" title="'+T[cur][0]+'" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';timer=setInterval(function(){pos++;if(pos>=T[cur][2]){clearInterval(timer);return;}render();},1000);return;}
+if(id){y.hidden=false;document.getElementById('idle').hidden=true;y.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=0&rel=0&playsinline=1" title="'+T[cur][0]+'" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';timer=setInterval(function(){pos++;if(pos>=T[cur][2]){clearInterval(timer);return;}render();},1000);return;}
 timer=setInterval(function(){pos++;if(pos>=T[cur][2]){go(cur+1,true);return;}render();},1000);}
 function stop(){clearInterval(timer);timer=null;on=false;var y=document.getElementById('yt');y.hidden=true;y.innerHTML='';document.getElementById('idle').hidden=false;player.classList.remove('playing');playBtn.textContent='▶';playBtn.setAttribute('aria-label','재생');}
 playBtn.onclick=function(){on?stop():start();};
