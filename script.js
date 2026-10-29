@@ -11,7 +11,7 @@ document.getElementById('dclose').onclick=function(){dlg.close();};
 dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
 var on=false;
 /* 곡마다 마지막 칸에 유튜브 링크를 넣으면 재생 버튼을 눌렀을 때 그 영상이 재생돼요. */
-var T=[["고양이 걸음","DANI’S PICK",240,"https://youtu.be/IVrR0HmjRH4?si=ro7VbZBH-NchjMWh"],["하트 앞치마","DANI’S PICK",221,"https://www.youtube-nocookie.com/embed/c4U5kBGrfNc?si=nMaEvdhM6K-nAE9E"],["새벽 두 시의 메이드","DANI’S PICK",175,"https://youtu.be/d0yiJJ03kgU?si=PFNqGnOkPLMXL-RF"],["흑백 사진관","DANI’S PICK",203,""],["분홍빛 바닥","DANI’S PICK",238,"https://youtu.be/c4U5kBGrfNc?si=xkgjFE2wHJH7v59j"]];
+var T=[["고양이 걸음","DANI’S PICK",240,"https://youtu.be/uVFS_1CFS0Y?si=-zMFmrFjAeXUO66z"],["하트 앞치마","DANI’S PICK",221,"https://youtu.be/qLYeeuG2b1U?si=mc9Ub1IjodDINVS8"],["새벽 두 시의 메이드","DANI’S PICK",175,"https://youtu.be/UJ6fZnNyGFE?si=zFaJu922o2UQtpGT"],["흑백 사진관","DANI’S PICK",203,"https://youtu.be/aP-kOl1QZck?si=9SBqp0XR7DzI7XQ2"],["분홍빛 바닥","DANI’S PICK",238,"https://youtu.be/qwlsFE_vYHk?si=PW6cw4ed6k_-J_3i"]];
 var cur=0,pos=0,timer=null,player=document.getElementById('player'),list=document.getElementById('list'),playBtn=document.getElementById('play');
 function mmss(s){return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2);}
 function render(){var t=T[cur];document.getElementById('tt').textContent=t[0];document.getElementById('ta').textContent=t[1];document.getElementById('im').textContent=ytId(t[3])?'재생을 누르면 영상이 나와요':'이 곡은 아직 영상 링크가 없어요';
